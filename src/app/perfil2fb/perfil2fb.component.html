@@ -1,0 +1,50 @@
+<div [formGroup]="profileForm" class="formulario">
+  <mat-form-field>
+    <mat-label>Nombre: </mat-label>
+    <input matInput formControlName="nombre" />
+  </mat-form-field>
+  @if (profileForm.controls['nombre'].hasError('required')) {
+    <span style="color: red;">*</span>
+  }
+  <mat-form-field>
+    <mat-label>Apellidos: </mat-label>
+    <input matInput formControlName="apellidos" />
+  </mat-form-field>
+  <!-- <br>
+  <label for="edad">Edad: </label>
+  <input id="edad" type="text" formControlName="edad"> -->
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <!-- @if (profileForm.controls['email'].hasError('required')) {
+    <span style="color: red;">*</span>
+  }-->
+  @if (profileForm.controls['email'].hasError('email')) {
+  <span style="color: red">El correo debe tener formato de email</span>
+  }
+ 
+  <div formGroupName="direccion">
+    <h2>Dirección</h2>
+    <mat-form-field class="w-100">
+      <mat-label>Calle: </mat-label>
+      <input matInput formControlName="calle" />
+    </mat-form-field>
+    <mat-form-field style="margin-right: 10px;">
+      <mat-label for="localidad">Localidad: </mat-label>
+      <input matInput type="text" formControlName="localidad" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="provincia">Provincia: </mat-label>
+      <input matInput id="provincia" type="text" formControlName="provincia" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="codPostal">Código Postal: </mat-label>
+      <input matInput formControlName="codPostal" />
+    </mat-form-field>
+  </div>
+  <button [disabled]="profileForm.invalid " (click)="onSubmit()">Enviar</button>
+  <!-- <button type="button" (click)="actualiza()">Actualizar</button> -->
+</div>
+
+<p>{{profileForm.status}}  </p>

@@ -1,0 +1,32 @@
+<h1 style="text-align: center;">Ejemplo de Formularios Reactivos</h1>
+
+<mat-toolbar color="primary">
+  <span class="spacer"></span>
+  <div class="nav-links">
+    <a mat-button [routerLink]="['/form-dinamico']" routerLinkActive="router-link-active">form-dinamico</a>
+    <a mat-button [routerLink]="['/perfil-usu']" routerLinkActive="router-link-active">perfil-usu</a>
+    <a mat-button [routerLink]="['/perfil2bfb']" routerLinkActive="router-link-active">perfil2bfbs</a>
+  </div>
+</mat-toolbar>
+
+<!-- <label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+
+<label for="apellido">Apellido:</label>
+<input id="apellido" type="text" [(ngModel)]="apellido">
+
+<div>
+
+  <p>Nombre: {{name.value}}</p>
+  <p>Apellidos: {{apellido}}</p>
+
+  <button type="button" (click)="updateName()">Update Name</button>
+</div> -->
+
+<!-- <app-perfil-usuario></app-perfil-usuario>
+ <app-perfil2fb></app-perfil2fb>-->
+ <mat-divider></mat-divider>
+ <div class="router-container">
+  <router-outlet></router-outlet>
+</div>
+
